@@ -12,8 +12,14 @@ Start-Sleep -s 1
 
 $hostname = Read-Host "Enter New Hostname"
 
-if ($hostname.Length -gt 15)
-{
+if ((-split $hostname).length -gt 1) {
+	"Invalid Hostname"
+	"EXITING"
+	Start-Sleep -s 5
+	Exit
+}
+
+if ($hostname.Length -gt 15) {
 	"Hostnames more than 15 characters not allowed...Please try again..."
 	"EXITING"
 	Start-Sleep -s 5
@@ -30,8 +36,7 @@ $continue = Read-Host "DO YOU WANT TO CONTINUE? y/n"
 
 ""
 
-if ($continue.ToLower() -eq "y") 
-{
+if ($continue.ToLower() -eq "y") {
 	Rename-Computer -NewName $hostname
 	"Hostname changed to $hostname"
 	""
@@ -44,8 +49,6 @@ if ($continue.ToLower() -eq "y")
 	}
 	
 	Restart-Computer
-} 
-else
-{
+} else {
 	Exit
 }
