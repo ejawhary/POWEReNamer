@@ -8,6 +8,15 @@
 
 ""
 
+if (!([Security.Principal.WindowsIdentity]::GetCurrent().Groups -contains 'S-1-5-32-544')) {
+	"Powershell not running as administrator. Please run powershell as administrator and try again"
+	Start-Sleep -s 5
+	"Exiting"
+	Start-Sleep -s 2
+	Exit
+
+}
+
 Start-Sleep -s 1
 
 $hostname = Read-Host "Enter New Hostname"
