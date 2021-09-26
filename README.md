@@ -18,7 +18,7 @@ Rename PC's with ease
 <p>Client:</p>
 <p>Run powershell as administrator</p>
 <p>Run POWEReNamer.ps1 over the network with command replacing SERVER-IP with the IP address of your python server hosting POWEReNamer.ps1\</p\>
-<p>IEX (New-Object Net.Webclient).downloadstring('http://SERVER-IP:8888/renamer.ps1')</p>
+<p>IEX (New-Object Net.Webclient).downloadstring('http://SERVER-IP:8888/POWEReNamer.ps1')</p>
 
 <p>Example:</p>
 <p>IEX (New-Object Net.Webclient).downloadstring('http://10.10.100.20:8888/POWEReNamer.ps1')</p>
